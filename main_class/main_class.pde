@@ -16,8 +16,15 @@ int patternSeperationY = 100;
 
 //Fourth illusion variables
 int a,b,i,x,y;
-
 boolean active = true;
+
+//Six illusion variables
+PGraphics pg2;
+PImage img;
+
+//Seven illusion variables
+float x1=1;
+
 
 
 void setup() {
@@ -28,6 +35,8 @@ void setup() {
   globalAngle = 0.0;
   isometryCount = 6;
   depthStop = 2;
+  pg2 = createGraphics(640,200);
+  
 }
 
 void draw() {
@@ -48,7 +57,7 @@ void draw() {
   case 2:
     illusory();
     break;
-  case 3:
+   case 3:
     third();
     break;
   case 4:
@@ -58,12 +67,11 @@ void draw() {
     Bulging_Checkerboard();
     break;
   case 6: 
-    //white_xmas();
+    bananas();
     break;
   case 7:
-    //pigeon_neck();
+    otra();
     break;
-    //println("implementation is missed!");
   }
   popStyle();
 }
@@ -71,8 +79,6 @@ void draw() {
 void keyPressed() {
   if (key == ' ')
     current = current < illusions ? current+1 : 1;
-  if (key == 'a')
-    active = !active;
 }
 
 
@@ -137,7 +143,6 @@ void illusory(){
   ellipse(forthQuadrantPosition-190, 250, 20, 20);//l
   ellipse(250, forthQuadrantPosition-190, 20, 20);//U
 }
-
 void third(){
   for(int i = 0; i < width/patternSeperationX+1; i++){
       for(int j = 0; j < height/patternSeperationY+1; j++){
@@ -149,11 +154,11 @@ void third(){
   fill(255);
  int a= 0;
  int b= 550;
- 
+
  while(a<500){
    ellipse(a,b,4,8);
    ellipse(a,b,8,4);
-   
+
    a= a+50;
    b= b-50;
  }
@@ -161,13 +166,13 @@ void third(){
  ellipse(500,50,4,8);
  ellipse(500,50,8,4);
  ellipse(0,0,8,4);
- ellipse(0,0,4,8); 
- 
+ ellipse(0,0,4,8);
+
  ellipse(150,0,4,8);
  ellipse(100,50,4,8);
  ellipse(50,100,4,8);
  ellipse(0,150,4,8);
- 
+
  ellipse(0,250,4,8);
  ellipse(50,200,4,8);
  ellipse(100,150,4,8);
@@ -182,7 +187,7 @@ void third(){
  ellipse(200,100,4,8);
  ellipse(250,50,4,8);
  ellipse(300,0,4,8);
- 
+
 ellipse(0,400,4,8);
  ellipse(50,350,4,8);
  ellipse(100,300,4,8);
@@ -194,19 +199,19 @@ ellipse(0,400,4,8);
  ellipse(400,0,4,8);
  ellipse(350,50,8,4);
  ellipse(400,0,8,4);
- 
+
  ellipse(150,0,8,4);
  ellipse(100,50,8,4);
  ellipse(50,100,8,4);
  ellipse(0,150,8,4);
- 
+
  ellipse(0,250,8,4);
  ellipse(50,200,8,4);
  ellipse(100,150,8,4);
  ellipse(150,100,8,4);
  ellipse(200,50,8,4);
  ellipse(250,0,8,4);
- 
+
  ellipse(0,300,8,4);
  ellipse(50,250,8,4);
  ellipse(100,200,8,4);
@@ -214,8 +219,8 @@ ellipse(0,400,4,8);
  ellipse(200,100,8,4);
  ellipse(250,50,8,4);
  ellipse(300,0,8,4);
- 
- 
+
+
 ellipse(0,400,8,4);
  ellipse(50,350,8,4);
  ellipse(100,300,8,4);
@@ -223,8 +228,8 @@ ellipse(0,400,8,4);
  ellipse(200,200,8,4);
  ellipse(250,150,8,4);
  ellipse(300,100,8,4);
- 
- 
+
+
  ellipse(0,650,4,8);
  ellipse(50,600,4,8);
  ellipse(100,550,4,8);
@@ -247,7 +252,7 @@ ellipse(0,400,8,4);
  ellipse(400,250,8,4);
  ellipse(450,200,8,4);
  ellipse(500,150,8,4);
- 
+
   ellipse(50,650,8,4);
  ellipse(100,600,8,4);
  ellipse(150,550,8,4);
@@ -260,7 +265,7 @@ ellipse(0,400,8,4);
  ellipse(500,200,8,4);
  ellipse(550,150,8,4);
  ellipse(0,700,8,4);
- 
+
  ellipse(0,700,8,4);
  ellipse(50,650,4,8);
  ellipse(100,600,4,8);
@@ -273,7 +278,7 @@ ellipse(0,400,8,4);
  ellipse(450,250,4,8);
  ellipse(500,200,4,8);
  ellipse(550,150,4,8);
- 
+
  ellipse(150,650,4,8);
  ellipse(100,700,8,4);
  ellipse(100,700,4,8);
@@ -305,7 +310,7 @@ ellipse(0,400,8,4);
  ellipse(0,800,4,8);
  ellipse(50,750,8,4);
  ellipse(50,750,4,8);
- 
+
  ellipse(500,450,4,8);
  ellipse(450,500,4,8);
  ellipse(400,550,4,8);
@@ -329,8 +334,8 @@ ellipse(0,400,8,4);
  ellipse(100,850,8,4);
  ellipse(50,900,8,4);
  ellipse(0,950,8,4);
- 
- 
+
+
  ellipse(500,550,8,4);
  ellipse(450,600,8,4);
  ellipse(400,650,8,4);
@@ -341,7 +346,7 @@ ellipse(0,400,8,4);
  ellipse(150,900,8,4);
  ellipse(100,950,8,4);
  ellipse(50,1000,8,4);
- 
+
  //
  ellipse(500,550,4,8);
  ellipse(450,600,4,8);
@@ -353,7 +358,7 @@ ellipse(0,400,8,4);
  ellipse(150,900,4,8);
  ellipse(100,950,4,8);
  ellipse(50,1000,4,8);
- 
+
  ellipse(500,600,4,8);
  ellipse(450,650,4,8);
  ellipse(400,700,4,8);
@@ -373,7 +378,7 @@ ellipse(0,400,8,4);
  ellipse(200,900,8,4);
  ellipse(150,950,8,4);
  ellipse(100,1000,8,4);
- 
+
  ellipse(500,700,4,8);
  ellipse(450,750,4,8);
  ellipse(400,800,4,8);
@@ -390,7 +395,7 @@ ellipse(0,400,8,4);
  ellipse(300,900,8,4);
  ellipse(250,950,8,4);
  ellipse(200,1000,8,4);
- 
+
  ellipse(500,850,4,8);
  ellipse(450,900,4,8);
  ellipse(400,950,4,8);
@@ -408,7 +413,7 @@ ellipse(0,400,8,4);
  //
  ellipse(500,950,8,4);
  ellipse(450,1000,8,4);
- 
+
 }
 }
 void function(){
@@ -419,7 +424,7 @@ void function(){
     fill(150);
     rect(50,0,50,50);
     rect(0,50,50,50);
-    
+
     fill(0);
     ellipse(0,0,4,8);
     ellipse(0,0,8,4);
@@ -456,7 +461,7 @@ void Bulging_Checkerboard() {
   fill(255);
   int des=0;
   float tamCuadro=61;
-  for (int i=0; i<height; i += tamCuadro*2) {        
+  for (int i=0; i<height; i += tamCuadro*2) {
     for (int j=0; j<width; j += tamCuadro) {
       if (des==0) {
         des+=tamCuadro;
@@ -555,4 +560,53 @@ void Bulging_Checkerboard() {
     }
   }
 }
+
+void bananas(){
+  surface.setSize(640,200);
+  pg2.beginDraw();
+  img = loadImage("Data/bananas.png");  
+  pg2.background(img);
+  //pg2.stroke(255);
+  pg2.endDraw();
+ image(pg2, 5, 5);
+}
+
+void otra(){
+  surface.setSize(400, 330);
+  smooth();
+  background(255);
+
+  for (int i = 0; i < 30;i++) {
+    noStroke();
+    fill(0);
+    rect(i * 20, 0, 10, height);
+  }
+
+  if (mousePressed == true) {
+    background(150);
+  }
+
+  for (int q = 0; q < 4; q++) {
+    if (q % 2 == 0) {
+      fill(0);
+    }
+    else {
+      fill(255);
+    }
+    rect(x1, q * 90 + 5, 20, 50);
+  }
+
+  if (keyPressed == true) {
+    stroke(255, 0, 0);
+    strokeWeight(3);
+    noFill();
+    rect(x1, 5, 21, 320);
+  }
+  
+  x1 += 0.5;
  
+  if (x1 > width + 10) {
+    x1 = 0;
+  }
+
+}
